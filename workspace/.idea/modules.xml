@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/.org.eclipse.jdt.core.external.folders/.org.eclipse.jdt.core.external.folders.iml" filepath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/.org.eclipse.jdt.core.external.folders/.org.eclipse.jdt.core.external.folders.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EmailTest/EmailTest.iml" filepath="$PROJECT_DIR$/EmailTest/EmailTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JUnitTest/JUnitTest.iml" filepath="$PROJECT_DIR$/JUnitTest/JUnitTest.iml" />
+    </modules>
+  </component>
+</project>
+

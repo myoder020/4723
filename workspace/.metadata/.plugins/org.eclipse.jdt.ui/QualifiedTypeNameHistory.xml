@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.apache.commons.mail.Email"/>
+<fullyQualifiedTypeName name="org.apache.commons.mail.SimpleEmail"/>
+<fullyQualifiedTypeName name="org.apache.commons.mail.DefaultAuthenticator"/>
+<fullyQualifiedTypeName name="org.apache.commons.mail.mocks.MockEmailConcrete"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javax.mail.internet.InternetAddress"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>
