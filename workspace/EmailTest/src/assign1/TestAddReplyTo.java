@@ -1,4 +1,4 @@
-package blah;
+package assign1;
 
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.mocks.MockEmailConcrete;

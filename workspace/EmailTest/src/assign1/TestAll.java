@@ -1,7 +1,7 @@
 /**
  * 
  */
-package blah;
+package assign1;
 
 
 import org.junit.runner.RunWith;
@@ -12,7 +12,8 @@ import org.junit.runners.Suite;
        TestAddBcc.class,
        TestAddCc.class,
        TestAddHeader.class,
-       TestAddReplyTo.class
+       TestAddReplyTo.class,
+       getHostNameTest.class
 })
 
 /**
