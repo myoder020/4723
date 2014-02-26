@@ -26,7 +26,7 @@ public class TestAddCc {
 
     /** mock for testing */
     private MockEmailConcrete email;
-
+    private MockEmailConcrete invalidEmail;
 
     /**
      * @throws java.lang.Exception
@@ -34,6 +34,7 @@ public class TestAddCc {
     @Before
     public void setUp() throws Exception {
         email = new MockEmailConcrete();
+        invalidEmail = new MockEmailConcrete();
     }
 
     @Test
@@ -76,6 +77,16 @@ public class TestAddCc {
                 email.getCcAddresses().toString());
     }
 
+    @Test(expected = NullPointerException.class)
+    public void EmailExceptionNullTest() throws EmailException{
+        invalidEmail.addCc(null);
+    }
+
+    @Test(expected = EmailException.class)
+    public void EmailExceptionEmptyTest() throws EmailException{
+        invalidEmail.addCc("");
+    }
+
 
     /**
      * @throws java.lang.Exception
@@ -83,5 +94,6 @@ public class TestAddCc {
     @After
     public void tearDown() throws Exception {
         email = null;
+        invalidEmail = null;
     }
 }

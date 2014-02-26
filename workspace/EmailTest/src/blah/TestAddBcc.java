@@ -25,6 +25,12 @@ public class TestAddBcc {
                     "someone_here@work-address.com.au"
             };
 
+    private static final String[] INVALID_EMAILS =
+            {
+                    "",
+                    null
+            };
+
     /** mock for testing */
     private MockEmailConcrete email;
 
@@ -73,6 +79,11 @@ public class TestAddBcc {
         assertEquals(
                 arrExpected.toString(),
                 email.getBccAddresses().toString());
+    }
+
+    @Test(expected = EmailException.class)
+    public void EmailExceptionTest() throws EmailException{
+        email.addBcc(INVALID_EMAILS);
     }
 
     @After

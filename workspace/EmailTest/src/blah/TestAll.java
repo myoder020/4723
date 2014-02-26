@@ -10,7 +10,9 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
        TestAddBcc.class,
-       TestAddCc.class
+       TestAddCc.class,
+       TestAddHeader.class,
+       TestAddReplyTo.class
 })
 
 /**
