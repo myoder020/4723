@@ -16,8 +16,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by myoder on 2/26/14.
  */
-public class TestAddBcc {
-
+public class testAddCc {
     private static final String[] VALID_EMAILS =
             {
                     "me@home.com",
@@ -25,15 +24,9 @@ public class TestAddBcc {
                     "someone_here@work-address.com.au"
             };
 
-    private static final String[] INVALID_EMAILS =
-            {
-                    "",
-                    null
-            };
-
     /** mock for testing */
     private MockEmailConcrete email;
-
+    private MockEmailConcrete invalidEmail;
 
     /**
      * @throws java.lang.Exception
@@ -41,10 +34,13 @@ public class TestAddBcc {
     @Before
     public void setUp() throws Exception {
         email = new MockEmailConcrete();
+        invalidEmail = new MockEmailConcrete();
     }
 
     @Test
-    public void testAddBcc() {
+    public void testAddCc() {
+
+        //add email addresses to arraylist
         List<InternetAddress> arrExpected = new ArrayList<InternetAddress>();
         try {
             arrExpected.add(new InternetAddress("me@home.com"));
@@ -65,29 +61,39 @@ public class TestAddBcc {
             e.printStackTrace();
         }
 
-        // add a valid bcc
+
+        // add a valid cc
         try {
-            email.addBcc(VALID_EMAILS);
+            for(InternetAddress temp : arrExpected)
+                email.addCc(temp.toString());
         } catch (EmailException e) {
-            System.out.println("Error adding all the emails to the BCC list");
+            System.out.println("Couldn't add emails to CC list");
             e.printStackTrace();
         }
 
         // retrieve and verify
-        assertEquals("Testing whether the expected size is the same as the size of " +
-                "\nour list.",arrExpected.size(), email.getBccAddresses().size());
-        assertEquals(
-                arrExpected.toString(),
-                email.getBccAddresses().toString());
+        assertEquals("Test should pass", arrExpected.size(), email.getCcAddresses().size());
+        assertEquals("Test should pass", arrExpected.toString(),
+                email.getCcAddresses().toString());
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void EmailExceptionNullTest() throws EmailException{
+        invalidEmail.addCc(null);
     }
 
     @Test(expected = EmailException.class)
-    public void EmailExceptionTest() throws EmailException{
-        email.addBcc(INVALID_EMAILS);
+    public void EmailExceptionEmptyTest() throws EmailException{
+        invalidEmail.addCc("");
     }
 
+
+    /**
+     * @throws java.lang.Exception
+     */
     @After
     public void tearDown() throws Exception {
         email = null;
+        invalidEmail = null;
     }
 }

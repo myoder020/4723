@@ -9,7 +9,7 @@ import org.junit.Test;
 /**
  * Created by myoder on 2/26/14.
  */
-public class TestAddReplyTo {
+public class testAddReplyTo {
 
     private MockEmailConcrete email;
 

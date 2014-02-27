@@ -9,11 +9,15 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.Assert.*;
 
-public class TestAddHeader {
+public class testAddHeader {
 
     private String name = "John";
+    private Map<String, String> test;
 
     /** mock for testing */
     private MockEmailConcrete email;
@@ -24,6 +28,8 @@ public class TestAddHeader {
     @Before
     public void setUp() throws Exception {
         email = new MockEmailConcrete();
+        test = new HashMap<String, String>();
+        test.put("John","Test");
     }
 
     @Test
@@ -53,10 +59,14 @@ public class TestAddHeader {
         //Test adding a header to an email
         email.addHeader(name, "Test");
         assertEquals("Test should pass", 1, email.getHeaders().size());
+
+        //Verify header is same as what was passed
+        assertEquals(test, email.getHeaders());
     }
 
     @After
     public void tearDown() throws Exception {
         email = null;
+        test = null;
     }
 }
