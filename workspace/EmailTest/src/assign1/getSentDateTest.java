@@ -37,10 +37,6 @@ public class getSentDateTest {
 
         Date sentDate = email.getSentDate();
 
-        // Date objects are millisecond specific. If you have a slow processor,
-        // time passes between the generation of dtTest and the new Date() in
-        // getSentDate() and this test fails. Make sure that the difference
-        // is less than a second...
         assertTrue(Math.abs(sentDate.getTime() - dtTest.getTime()) < 1000);
     }
 

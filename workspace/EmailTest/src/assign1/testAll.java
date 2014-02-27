@@ -15,7 +15,8 @@ import org.junit.runners.Suite;
        testAddReplyTo.class,
        getHostNameTest.class,
        setFromTest.class,
-       getSentDateTest.class
+       getSentDateTest.class,
+       getMailSessionTest.class
 })
 
 /**
